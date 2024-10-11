@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- google font lato  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- font awesome   -->
+    <script src="https://kit.fontawesome.com/7deee25e9f.js" crossorigin="anonymous"></script>
+
+    <!--tailwind & daisy khala  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                black1: '#131313',
+                btnBg: '#0E7A81',
+                clifford: '#da373d',
+              },
+              fontFamily : {
+                Lato : 'lato'
+              },
+            }
+          }
+        }
+      </script>
+
+</head>
+<body class="font-Lato">
+  
+
+    <header>
+        <nav class="container mx-auto p-4 mt-8">
+            <div class="navbar bg-base-100 ">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Home</a></li>
+                      <li><a>Shop</a></li>
+                      <li><a>Contact</a></li> 
+                    </ul>
+                  </div>
+                 <div class="flex justify-center items-center gap-3">
+                    <img class="w-9 h-9" src="images/logo.webp" alt="">
+                    <h1 class="text-4xl text-black1 font-bold">Peddy</h1>
+                 </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                   <div class="">
+                    <i class="fa-regular fa-user border w-14 text-center rounded-full h-14 p-3 text-2xl "></i>
+                   </div>
+                </div>
+              </div>
+        </nav>
+        <section class="container mx-auto p-4 mt-8 space-y-5 flex flex-col justify-center items-center text-center max-w-[810px]">
+            <p class="text-xl text-slate-500 font-medium">Bringing Families Together  🔥</p>
+
+            <h2 class="font-bold text-black1 xl:text-7xl lg:text-7xl md:text-5xl text-4xl">Your Path to Adoption Starts Here</h2>
+
+            <p class="text-black1">Pets bring joy and companionship to people's lives. Whether it's a playful dog, a curious cat, or a calm fish, pets offer unconditional love and emotional support. They help reduce stress, encourage activity, and create lasting memories for their owners.</p>
+
+            <button id="viewBtn" class="btn bg-btnBg text-white">View More</button>
+
+            <div>
+                <img src="images/pet.webp" alt="">
+            </div>
+        </section>
+    </header>
+    <main id="best-friend-section">
+      <div class="container max-w-[800px] mx-auto p-4 mt-8 text-center space-y-6 mb-14">
+        <h1 class="text-black1 font-bold xl:text-5xl lg:text-5xl md:text-4xl text-3xl">Adopt Your Best Friend</h1>
+        <p class="text-slate-600">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+      </div>
+
+    <!-- pet secton button  -->
+      <div id="pet-btn-section" class="container mx-auto p-4 gap-4 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-items-center">
+
+      </div>
+
+    <!-- best deal section  -->
+     <div class="container mx-auto p-4  flex justify-between items-center flex-wrap">
+         <h3 class="text-2xl font-extrabold text-black1">Best Deal for You</h3>
+         <button class="btn bg-btnBg font-medium text-xl text-white">Sort by Price</button>
+     </div>
+
+      <!-- spinner  -->
+      
+    <div id="spinner" class="hidden container mx-auto  p-4 text-center">
+        <span class="loading loading-bars loading-lg "></span>
+
+    </div>
+
+         <!-- best deal container section -->
+    <section   class="container mx-auto p-4  grid grid-cols-4 gap-6">
+       
+        <div id="best-deal-container"  class="xl:col-span-3 lg:col-span-3 md:col-span-3 col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 ">
+
+        </div>
+       <!-- selected pet  -->
+      <div class="xl:col-span-1 lg:col-span-1 md:col-span-1 col-span-4">
+        <div id="selected-img" class="rounded-xl border grid grid-cols-2 lg:p-5 lg:gap-5 xl:p-5 xl:gap-5 md:gap-2 md:p-2 gap-5 p-5">
+        
+        </div>
+      </div>
+     </section>
+
+    </main>
+
+    
+   
+
+
+    <footer class=" bg-black lg:p-20 xl:p-20 md:p-16 p-7 ">
+      <div  class=" container mx-auto p-4 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-center gap-20">
+        <div class="text-slate-300 space-y-6">
+            <div class="flex gap-3">
+                <img class="w-9 h-9" src="images/logo.webp" alt="">
+                <h1 class="text-4xl text-white font-bold">Peddy</h1>
+             </div>
+             <p>Location : av. Washington 166 </p>
+             <p>Phone : 01714347906</p>
+             <p>Email : mustafizur8g@gamil.com</p>
+             <p>Openings hours : 9:00AM - 4:00 PM</p>
+             <div class="flex gap-3">
+                <i class="fa-brands fa-facebook text-4xl "></i>
+                <i class="fa-brands fa-x-twitter text-4xl "></i>
+                <i class="fa-brands fa-instagram text-4xl "></i>
+                <i class="fa-brands fa-linkedin text-4xl "></i>
+             </div>
+          </div>
+          <div>
+            <h3  class="text-white font-bold text-xl mb-6">Useful Links</h3>
+           <div class="flex flex-col text-slate-500 gap-3 text-lg">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Animals</a>
+            <a href="">Foundation</a>
+            <a href="">Contact</a>
+           </div>
+          </div>
+          <div class="flex flex-col gap-5">
+            <h2 class="text-white font-bold text-xl">Drop a Message</h2>
+            <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs text-slate-400 bg-stone-900" />
+            <button class="btn bg-btnBg text-white border-none w-[320px] ">Subscribe</button>
+          </div>
+      </div>
+    </footer>
+
+
+   <!-- Open the modal using ID.showModal() method -->
+<span  onclick="my_modal_1.showModal()"></span>
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <div id="modal-container"> 
+
+    </div>
+    <div class="">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+       <div>
+        <button class="btn w-full bg-teal-100 text-teal-500">Cancel</button>
+       </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+    <script src="index.js"></script>
+</body>
+</html>
